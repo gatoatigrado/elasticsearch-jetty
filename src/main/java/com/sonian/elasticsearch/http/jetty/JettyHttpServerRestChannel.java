@@ -53,7 +53,6 @@ public class JettyHttpServerRestChannel implements HttpChannel {
     @Override
     public void sendResponse(RestResponse response) {
         resp.setContentType(response.contentType());
-        resp.addHeader("Access-Control-Allow-Origin", "*");
         if (response.status() != null) {
             resp.setStatus(response.status().getStatus());
         } else {
